@@ -9,8 +9,10 @@ app.set('view engine', 'ejs')
 // Database setup
 const {Client} = require('pg')
 
+const connectionString = 'postgres://fsaegmxltrnjdl:5aa5c24fb8baf7ddf2034ba70bf7278a8c2ceaa009d26a956c66e9d465bc3379@ec2-174-129-255-7.compute-1.amazonaws.com:5432/d1dnalu9ko4dpr'
+
 const client = new Client({
-    host: process.env.DATABASE_URL,
+    connectionString: connectionString,
     ssl: true,
 })
 
