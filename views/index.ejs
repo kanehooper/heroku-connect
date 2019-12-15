@@ -8,7 +8,9 @@
 </head>
 <body>
     <h1>User data from Salesforce</h1>
-    <p><%= users[0].firstname %></p>
+    <% users.forEach(user => { %>
+        <p><%= user.firstname %></p>
+    <% }) %>
     
 </body>
 </html>
