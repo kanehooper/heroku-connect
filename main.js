@@ -21,13 +21,13 @@ client.connect()
         if (err) console.log('Error')
     })
 
-// client.query('SELECT firstname, lastname, email FROM salesforce.user;', (err, res) => {
-//     if (err) throw err
-//     for (let row of res.rows) {
-//         console.log(JSON.stringify(row))
-//     }
-//     client.end()
-// })
+client.query('SELECT firstname, lastname, email FROM salesforce.user;', (err, res) => {
+    if (err) throw err
+    for (let row of res.rows) {
+        console.log(JSON.stringify(row))
+    }
+    client.end()
+})
 
 app.get('/', (req, res) => {
   res.render('index')  
