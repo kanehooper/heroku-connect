@@ -17,6 +17,7 @@ const client = new Client({
 })
 
 client.connect()
+    .then()
     .catch(err => {
         if (err) console.log('Error')
     })
@@ -28,13 +29,15 @@ client.query('SELECT firstname, lastname, email FROM salesforce.user;', (err, re
     for (let row of res.rows) {
         users.push(row)
     }
-    console.log(users)
     client.end()
+})
+.then(data => {
+    app.listen(port, () => console.log(`Server listening on port ${port}`))
 })
 
 app.get('/', (req, res) => {
   res.render('index')  
 })
 
-app.listen(port, () => console.log(`Server listening on port ${port}`))
+
 
