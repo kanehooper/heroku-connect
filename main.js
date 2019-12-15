@@ -34,7 +34,7 @@ client.query('SELECT firstname, lastname, email FROM salesforce.user;', (err, re
 })
 
 app.get('/', (req, res) => {
-  res.render('index', users)  
+  res.render('index', {users})  
 })
 
 
