@@ -15,6 +15,9 @@ const client = new Client({
 })
 
 client.connect()
+    .catch(err => {
+        if (err) console.log('Error')
+    })
 
 // client.query('SELECT firstname, lastname, email FROM salesforce.user;', (err, res) => {
 //     if (err) throw err
