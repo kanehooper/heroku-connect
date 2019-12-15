@@ -21,11 +21,14 @@ client.connect()
         if (err) console.log('Error')
     })
 
+const users = []
+
 client.query('SELECT firstname, lastname, email FROM salesforce.user;', (err, res) => {
     if (err) throw err
     for (let row of res.rows) {
-        console.log(JSON.stringify(row))
+        users.push(row)
     }
+    console.log(users)
     client.end()
 })
 
