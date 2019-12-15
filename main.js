@@ -30,8 +30,6 @@ client.query('SELECT firstname, lastname, email FROM salesforce.user;', (err, re
         users.push(row)
     }
     client.end()
-})
-.then(data => {
     app.listen(port, () => console.log(`Server listening on port ${port}`))
 })
 
