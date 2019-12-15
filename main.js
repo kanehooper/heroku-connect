@@ -1,8 +1,13 @@
 const express = require('express')
+const ejs = require('ejs')
 const app = express()
 const port = process.env.PORT || 3000
 
-app.get('/', (req, res) => res.send('Heroku Connect app'))
+app.set('view engine', 'ejs')
+
+app.get('/', (req, res) => {
+  res.render('pages/index')  
+})
 
 app.listen(port, () => console.log(`Server listening on port ${port}`))
 
