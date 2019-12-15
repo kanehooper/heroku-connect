@@ -8,9 +8,19 @@
 </head>
 <body>
     <h1>User data from Salesforce</h1>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
     <% users.forEach(user => { %>
-        <p><%= user.firstname %></p>
+        <tr>
+            <td><%= user.firstname %></td>
+            <td><%= user.lastname %></td>
+            <td><%= user.email %></td>
+        </tr>
     <% }) %>
+    </table>
     
 </body>
 </html>
