@@ -16,7 +16,7 @@ const client = new Client({
 
 client.connect()
 
-client.query('SELECT firstname, lastname, email FROM salesforce.user ORDER BY systemmodstamp DESC;', (err, res) => {
+client.query('SELECT firstname, lastname, email FROM salesforce.user;', (err, res) => {
     if (err) throw err
     for (let row of res.rows) {
         console.log(JSON.stringify(row))
